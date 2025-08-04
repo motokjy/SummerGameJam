@@ -1,11 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TechC
+[CreateAssetMenu(fileName = "RequestDataBase", menuName = "Quest/RequestDataBase")]
+public class RequestDataBase : ScriptableObject
 {
-    [CreateAssetMenu(fileName = "CharPrefabDatabase", menuName = "Test")]
-    public class CharPrefabDatabase : ScriptableObject
-    {
-        public List<string> requestText=new List<string>();
-    }
+    public List<Request> requests = new List<Request>();
 }
