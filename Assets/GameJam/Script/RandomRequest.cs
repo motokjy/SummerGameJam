@@ -7,7 +7,7 @@ public class RandomQuest : MonoBehaviour
     [SerializeField] private TMP_Text questText;
     void Start()
     {
-        SetRandomQuest();
+        
     }
 
     void Update()
@@ -23,4 +23,8 @@ public class RandomQuest : MonoBehaviour
         questText.text = selected.requestText;
     }
 
+    public void ShowNewQuest()
+    {
+        SetRandomQuest();
+    }
 }

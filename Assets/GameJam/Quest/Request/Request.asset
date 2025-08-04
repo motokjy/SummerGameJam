@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e992b2609824464183d6f122dcb402e, type: 3}
   m_Name: Request
   m_EditorClassIdentifier: 
-  requestText: "\u666E\u901A\u306E\u30D0\u30A4\u30C8\uFF11"
+  requestText: 1
   requestReward: 200

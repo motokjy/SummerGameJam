@@ -39,6 +39,11 @@ public class MoveQuest : MonoBehaviour
         return isCancelled;
     }
 
+    public void ResetCancel()
+    {
+        isCancelled = false;
+    }
+
     void StartMiniGame()
     {
         gameObject.SetActive(false);
