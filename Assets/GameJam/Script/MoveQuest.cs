@@ -5,6 +5,7 @@ using TMPro;
 public class MoveQuest : MonoBehaviour
 {
     [SerializeField] private float displayDuration = 5f;
+    [SerializeField] private GameObject otherObject;
     private float timer;
     private bool isCancelled = false; // 修正: privateにしてメソッドでアクセス
 
@@ -13,7 +14,7 @@ public class MoveQuest : MonoBehaviour
     void OnEnable()
     {
         timer = displayDuration;
-        isCancelled = false; 
+        isCancelled = false;
     }
 
     void Update()
@@ -39,8 +40,17 @@ public class MoveQuest : MonoBehaviour
         return isCancelled;
     }
 
+    public void ResetCancel()
+    {
+        isCancelled = false;
+    }
+
     void StartMiniGame()
     {
         gameObject.SetActive(false);
+        if (otherObject != null)
+        {
+            otherObject.SetActive(false);
+        }
     }
 }

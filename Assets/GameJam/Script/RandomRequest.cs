@@ -5,15 +5,6 @@ public class RandomQuest : MonoBehaviour
 {
     [SerializeField] private RequestDataBase requestDataBase;
     [SerializeField] private TMP_Text questText;
-    void Start()
-    {
-        SetRandomQuest();
-    }
-
-    void Update()
-    {
-
-    }
 
     void SetRandomQuest()
     {
@@ -23,4 +14,8 @@ public class RandomQuest : MonoBehaviour
         questText.text = selected.requestText;
     }
 
+    public void ShowNewQuest()
+    {
+        SetRandomQuest();
+    }
 }
