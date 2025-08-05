@@ -35,4 +35,6 @@ public class RandomQuest : MonoBehaviour
 
         currentActivePrefab = showObj;
     }
+
+    public Request SelectedRequest => selectedRequest;
 }

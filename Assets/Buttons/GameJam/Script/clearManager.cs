@@ -13,6 +13,7 @@ public class clearManager : MonoBehaviour
     [SerializeField] private GameObject questBoard;
     [SerializeField] private RandomQuest randomQuest;
     [SerializeField] private GameObject gameObject;
+    [SerializeField] private MoneyManager moneyManager; // 報酬管理用
 
     private bool isProcessing = false;
 
@@ -58,6 +59,11 @@ public class clearManager : MonoBehaviour
 
         if (questPaper != null) questPaper.SetActive(true);
         if (questBoard != null) questBoard.SetActive(true);
+
+        // 報酬を加算
+        if (randomQuest != null && randomQuest.SelectedRequest != null && moneyManager != null)
+            moneyManager.AddMoney(randomQuest.SelectedRequest.requestReward);
+
         if (randomQuest != null) randomQuest.ShowNewQuestText();
 
         gameObject.SetActive(false); // ミニゲームプレハブを非表示

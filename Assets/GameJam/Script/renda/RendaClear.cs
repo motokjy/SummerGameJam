@@ -10,6 +10,7 @@ public class RendaClear : MonoBehaviour
     [SerializeField] private RandomQuest randomQuest;
     [SerializeField] private GameObject gameObject;
     [SerializeField] private GameObject Hint;
+    [SerializeField] private MoneyManager moneyManager; // 追加
     private bool isCleared = false;
 
     // Update is called once per frame
@@ -39,6 +40,10 @@ public class RendaClear : MonoBehaviour
             questPaper.SetActive(true);
         if (questBoard != null)
             questBoard.SetActive(true);
+
+        // 報酬を加算
+        if (randomQuest != null && randomQuest.SelectedRequest != null && moneyManager != null)
+            moneyManager.AddMoney(randomQuest.SelectedRequest.requestReward);
 
         if (randomQuest != null)
             randomQuest.ShowNewQuestText();

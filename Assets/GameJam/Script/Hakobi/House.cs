@@ -8,6 +8,7 @@ public class House : MonoBehaviour
     [SerializeField] private GameObject questBoard;    // クエストボード（インスペクターでアサイン）
     [SerializeField] private RandomQuest randomQuest;  // 新しいクエストテキスト用
     [SerializeField] private GameObject gameObject;
+    [SerializeField] private MoneyManager moneyManager; // 追加
 
     private void Start()
     {
@@ -30,18 +31,19 @@ public class House : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        // ゴールテキストとこのプレハブを非表示
         if (goalText != null)
             goalText.SetActive(false);
         gameObject.SetActive(false);
 
-        // 紙とクエストボードを表示
         if (questPaper != null)
             questPaper.SetActive(true);
         if (questBoard != null)
             questBoard.SetActive(true);
 
-        // 新しいクエストのテキストを更新
+        // 報酬を加算
+        if (randomQuest != null && randomQuest.SelectedRequest != null && moneyManager != null)
+            moneyManager.AddMoney(randomQuest.SelectedRequest.requestReward);
+
         if (randomQuest != null)
             randomQuest.ShowNewQuestText();
     }

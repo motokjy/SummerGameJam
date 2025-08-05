@@ -9,6 +9,7 @@ public class GoalClear : MonoBehaviour
     public GameObject questBord;
     public GameObject miniGame;
     [SerializeField] private MoveQuest moveQuest;
+    [SerializeField] private MoneyManager moneyManager; // MoneyManagerをアサイン
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -31,6 +32,10 @@ public class GoalClear : MonoBehaviour
             clearText.SetActive(false);
         if (miniGame != null)
             miniGame.SetActive(false);
+
+        // 報酬を加算
+        if (randomQuest != null && randomQuest.SelectedRequest != null && moneyManager != null)
+            moneyManager.AddMoney(randomQuest.SelectedRequest.requestReward);
 
         // 新しいリクエストのテキストを更新
         if (randomQuest != null)
