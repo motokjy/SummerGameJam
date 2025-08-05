@@ -6,30 +6,48 @@ public class MoveQuest : MonoBehaviour
 {
     [SerializeField] private float displayDuration = 5f;
     [SerializeField] private GameObject otherObject;
+    [SerializeField] private GameObject Prefub;
+    [SerializeField] private CountDownManager countDownManager;
     private float timer;
     private bool isCancelled = false; // 修正: privateにしてメソッドでアクセス
-
+    private bool isCountDownStarted = false;
     public Animator animator;
 
     void OnEnable()
     {
         timer = displayDuration;
         isCancelled = false;
+        isCountDownStarted = false;
     }
 
     void Update()
     {
         if (isCancelled) return;
 
-        if(Input.GetMouseButtonDown(0))
+        timer -= Time.deltaTime;
+
+        if (!isCountDownStarted && timer <= (displayDuration - 2f))
+        {
+            isCountDownStarted = true;
+            if (countDownManager != null)
+            {
+                countDownManager.ShowCountDown();
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("キャンセルしました");
             isCancelled = true;
+            if (countDownManager != null)
+            {
+                countDownManager.HideCountDown();
+            }
             return;
         }
 
-        timer -= Time.deltaTime;
-        if(timer <= 0f)
+
+        if (timer <= 0f)
         {
             StartMiniGame();
         }
@@ -47,10 +65,9 @@ public class MoveQuest : MonoBehaviour
 
     void StartMiniGame()
     {
-        gameObject.SetActive(false);
+        if (Prefub != null)
+            Prefub.SetActive(false);
         if (otherObject != null)
-        {
             otherObject.SetActive(false);
-        }
     }
 }
