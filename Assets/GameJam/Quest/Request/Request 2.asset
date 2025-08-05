@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requestText: 3
   requestReward: 500
+  prefabName: getcoin

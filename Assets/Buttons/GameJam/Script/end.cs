@@ -33,10 +33,6 @@ public class GoalClear : MonoBehaviour
         if (miniGame != null)
             miniGame.SetActive(false);
 
-        // 報酬を加算
-        if (randomQuest != null && randomQuest.SelectedRequest != null && moneyManager != null)
-            moneyManager.AddMoney(randomQuest.SelectedRequest.requestReward);
-
         // 新しいリクエストのテキストを更新
         if (randomQuest != null)
             randomQuest.ShowNewQuestText();
@@ -45,6 +41,12 @@ public class GoalClear : MonoBehaviour
         if (questPaper != null)
             questPaper.SetActive(true);
         if (questBord != null)
-            questBord.SetActive(true);
+            questBord.SetActive(true);            
+
+        // 報酬を加算
+        if (randomQuest != null && randomQuest.SelectedRequest != null && moneyManager != null)
+            moneyManager.AddMoney(randomQuest.SelectedRequest.requestReward);
+
+
     }
 }
