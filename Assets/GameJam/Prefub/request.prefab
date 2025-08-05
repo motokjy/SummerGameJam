@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayDuration: 5
+  otherObject: {fileID: 0}
   animator: {fileID: 6798391705899612109}
 --- !u!95 &6798391705899612109
 Animator:
@@ -86,6 +87,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6798391705899612109}
   moveQuest: {fileID: 4624991602457556371}
+  questPaper: {fileID: 0}
+  randomQuest: {fileID: 0}
 --- !u!114 &4518585740405051412
 MonoBehaviour:
   m_ObjectHideFlags: 0
