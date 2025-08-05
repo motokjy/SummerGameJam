@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3189350560717831943}
   - component: {fileID: 7067173896520771464}
   - component: {fileID: 3541493214287175770}
+  - component: {fileID: 5443239157041591691}
   m_Layer: 0
   m_Name: CountDown
   m_TagString: Untagged
@@ -133,8 +134,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281029692ae07df4bba0f0c072185d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 5443239157041591691}
   countDown: {fileID: 7898035507550246612}
+--- !u!95 &5443239157041591691
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7898035507550246612}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a311a8041db998c47b4f45462f12c270, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9145365792618562309
 GameObject:
   m_ObjectHideFlags: 0

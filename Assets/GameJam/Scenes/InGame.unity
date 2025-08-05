@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: randomQuest
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2178806362485070755, guid: fd0a22add00102448be0b0b6276a896b, type: 3}
+      propertyPath: otherObject
+      value: 
+      objectReference: {fileID: 244727559}
     - target: {fileID: 3327029284168367631, guid: fd0a22add00102448be0b0b6276a896b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.15
