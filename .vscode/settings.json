@@ -60,9 +60,12 @@
         "*.asset": "yaml",
         "*.meta": "yaml",
         "*.prefab": "yaml",
-"explorer.fileNesting.enabled": true,
-"explorer.fileNesting.patterns": {
-    "*.sln": "*.csproj"
-},
-"dotnet.defaultSolution": "gamejym.sln","*.unity": "yaml"
+        "explorer.fileNesting.enabled": true,
+        "explorer.fileNesting.patterns": {
+            "*.sln": "*.csproj"
+        },
+        "dotnet.defaultSolution": "gamejym.sln",
+        "*.unity": "yaml"
+    },
+    "dotnet.defaultSolution": "gameJum.sln"
 }
