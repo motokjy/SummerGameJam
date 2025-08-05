@@ -8,6 +8,7 @@ public class GoalClear : MonoBehaviour
     public GameObject questPaper;   // 紙UI（インスペクターでアサイン）
     public GameObject questBord;
     public GameObject miniGame;
+    [SerializeField] private MoveQuest moveQuest;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -32,8 +33,8 @@ public class GoalClear : MonoBehaviour
             miniGame.SetActive(false);
 
         // 新しいリクエストのテキストを更新
-            if (randomQuest != null)
-                randomQuest.ShowNewQuestText();
+        if (randomQuest != null)
+            randomQuest.ShowNewQuestText();
 
         // 紙UIを表示
         if (questPaper != null)

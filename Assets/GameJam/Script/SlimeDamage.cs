@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class SlimeDamage : MonoBehaviour
 {
-    [SerializeField] GameObject Hint;
-    [SerializeField] GameObject clearText; // クリアテキスト用オブジェクトを追加
+    [SerializeField] GameObject Slime; // スライム（敵キャラ）
+
     public int hp = 3;
 
     void Start()
     {
-        Hint.SetActive(true);
-        clearText.SetActive(false); // 最初は非表示
+        if (Slime != null)
+            Slime.SetActive(true);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -19,10 +19,9 @@ public class SlimeDamage : MonoBehaviour
             hp--;
             if (hp <= 0)
             {
-                if (clearText != null)
-                    clearText.SetActive(true); // クリアテキストを表示
-                Hint.SetActive(false);
-                Destroy(gameObject);
+                if (Slime != null)
+                    Slime.SetActive(false); // スライムは即消す
+                // ここでコルーチンやUI処理はしない
             }
         }
     }

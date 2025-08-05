@@ -1,12 +1,20 @@
 using UnityEngine;
+using System.Collections;
 
 public class clearManager : MonoBehaviour
 {
     public GameObject clear;
     public GameObject gameOver;
     public GameObject Hint;
-    public Stop stopScript; // Stopスクリプトをアサイン
+    public Stop stopScript;
     public bool canClear = false;
+
+    [SerializeField] private GameObject questPaper;
+    [SerializeField] private GameObject questBoard;
+    [SerializeField] private RandomQuest randomQuest;
+    [SerializeField] private GameObject gameObject;
+
+    private bool isProcessing = false;
 
     void Start()
     {
@@ -22,32 +30,63 @@ public class clearManager : MonoBehaviour
 
     void Update()
     {
-        if (canClear)
+        if (isProcessing) return;
+
+        if (stopScript.isStop)
         {
-            if (stopScript.isStop)
+            if (canClear)
             {
-                clear.SetActive(true);
-                gameOver.SetActive(false);
-                if (Hint != null) Hint.SetActive(false); // クリア時にヒント非表示
+                StartCoroutine(ClearSequence());
+            }
+            else
+            {
+                StartCoroutine(GameOverSequence());
             }
         }
-        else
-        {
-            if (stopScript.isStop)
-            {
-                clear.SetActive(false);
-                gameOver.SetActive(true);
-                if (Hint != null) Hint.SetActive(false); // 失敗時もヒント非表示
-            }
-        }
+    }
 
+    private IEnumerator ClearSequence()
+    {
+        isProcessing = true;
+        if (clear != null) clear.SetActive(true);
+        if (gameOver != null) gameOver.SetActive(false);
+        if (Hint != null) Hint.SetActive(false);
 
+        yield return new WaitForSeconds(2f);
+
+        if (clear != null) clear.SetActive(false);
+
+        if (questPaper != null) questPaper.SetActive(true);
+        if (questBoard != null) questBoard.SetActive(true);
+        if (randomQuest != null) randomQuest.ShowNewQuestText();
+
+        gameObject.SetActive(false); // ミニゲームプレハブを非表示
+
+        isProcessing = false;
+    }
+
+    private IEnumerator GameOverSequence()
+    {
+        isProcessing = true;
+        if (clear != null) clear.SetActive(false);
+        if (gameOver != null) gameOver.SetActive(true);
+        if (Hint != null) Hint.SetActive(false);
+
+        yield return new WaitForSeconds(2f);
+
+        if (gameOver != null) gameOver.SetActive(false);
+
+        if (questPaper != null) questPaper.SetActive(true);
+        if (questBoard != null) questBoard.SetActive(true);
+        if (randomQuest != null) randomQuest.ShowNewQuestText();
+
+        gameObject.SetActive(false); // ミニゲームプレハブを非表示
+
+        isProcessing = false;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         canClear = false;
     }
-
-
 }
