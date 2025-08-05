@@ -42,7 +42,9 @@ public class QuestCancelAnimation : MonoBehaviour
         questPaper.transform.localRotation = initialRotation;
         questPaper.transform.localScale = initialScale;
 
-        randomQuest.ShowNewQuest();
+        // テキストだけ更新
+        randomQuest.ShowNewQuestText();
+
         questPaper.SetActive(true);
 
         hasPlayed = false;

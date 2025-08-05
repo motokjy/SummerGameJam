@@ -264,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requestDataBase: {fileID: 11400000, guid: 2f4c936e1e23cb3489c7315e0fff054d, type: 2}
   questText: {fileID: 6191591649280580361}
+  allPrefabs: []
 --- !u!114 &5782203030819710253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +297,7 @@ MonoBehaviour:
   otherObject: {fileID: 0}
   Prefub: {fileID: 7811243903209476812}
   countDownManager: {fileID: 3541493214287175770}
+  randomQuest: {fileID: 6477304835915501755}
   animator: {fileID: 4729125416918162482}
 --- !u!95 &4729125416918162482
 Animator:
@@ -353,7 +355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.094, y: -0.755}
+  m_AnchoredPosition: {x: 0.07, y: 0.02}
   m_SizeDelta: {x: 12.0572, y: 12.414}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &87475875516869167

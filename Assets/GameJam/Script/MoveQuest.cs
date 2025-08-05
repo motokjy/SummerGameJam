@@ -8,6 +8,8 @@ public class MoveQuest : MonoBehaviour
     [SerializeField] private GameObject otherObject;
     [SerializeField] private GameObject Prefub;
     [SerializeField] private CountDownManager countDownManager;
+    [SerializeField] private RandomQuest randomQuest; // 追加
+    
     private float timer;
     private bool isCancelled = false; // 修正: privateにしてメソッドでアクセス
     private bool isCountDownStarted = false;
@@ -62,12 +64,14 @@ public class MoveQuest : MonoBehaviour
     {
         isCancelled = false;
     }
-
     void StartMiniGame()
     {
         if (Prefub != null)
             Prefub.SetActive(false);
         if (otherObject != null)
             otherObject.SetActive(false);
+
+        if (randomQuest != null)
+            randomQuest.ShowPrefabForCurrentQuest(); // プレハブだけ表示
     }
 }
