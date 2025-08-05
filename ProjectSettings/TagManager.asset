@@ -6,6 +6,7 @@ TagManager:
   tags:
   - '"Slime"'
   - Bow
+  - Goal
   layers:
   - Default
   - TransparentFX
