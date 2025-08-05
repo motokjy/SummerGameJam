@@ -4,8 +4,17 @@
 TagManager:
   serializedVersion: 3
   tags:
+<<<<<<< HEAD
   - '"Slime"'
   - Bow
+=======
+  - endgame
+  - wall
+  - goal2
+  - goal1
+  - Ground
+  - coin
+>>>>>>> souta/minigame1
   layers:
   - Default
   - TransparentFX
@@ -43,8 +52,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: 
     uniqueID: 3745697427
     locked: 0
+=======
+>>>>>>> souta/minigame1
   m_RenderingLayers:
   - Default
