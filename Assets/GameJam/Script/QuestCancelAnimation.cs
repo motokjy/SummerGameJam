@@ -26,6 +26,7 @@ public class QuestCancelAnimation : MonoBehaviour
     {
         if(moveQuest.IsCancelled() && !hasPlayed)
         {
+            Debug.Log("キャンセルアニメーション");
             animator.SetTrigger("Cancel");
             hasPlayed = true;
         }
