@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: 622685632370646242, guid: fd0a22add00102448be0b0b6276a896b, type: 3}
       propertyPath: randomQuest
       value: 
-      objectReference: {fileID: 1892726766}
+      objectReference: {fileID: 0}
     - target: {fileID: 3327029284168367631, guid: fd0a22add00102448be0b0b6276a896b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.15
@@ -415,17 +415,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7811243903209476812, guid: fd0a22add00102448be0b0b6276a896b, type: 3}
   m_PrefabInstance: {fileID: 102872228}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1892726766 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4518585740405051412, guid: fd0a22add00102448be0b0b6276a896b, type: 3}
-  m_PrefabInstance: {fileID: 102872228}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892726765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 160e3f31aef8870468b000a619bea8ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
