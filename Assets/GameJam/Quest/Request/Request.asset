@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e992b2609824464183d6f122dcb402e, type: 3}
   m_Name: Request
   m_EditorClassIdentifier: 
-  requestText: 1
-  requestReward: 200
+  requestText: "\u5EA6\u80F8\u8A66\u3057\uFF01 \u58C1\u306B\u5411\u304B\u3063\u3066\u771F\u3063\u76F4\u3050\u8D70\u308C\uFF01
+    \u30AE\u30EA\u30AE\u30EA\u3067\u6B62\u307E\u308C\u305F\u3084\u3064\u306B\u306F\u5831\u916C\u3042\u308A\uFF01
+    \u8DDD\u96E2\u3092\u898B\u6975\u3081\u3066\u5DE6\u30AF\u30EA\u30C3\u30AF\uFF01\u5831\u916C500G"
+  requestReward: 500
   prefabName: tikinrace

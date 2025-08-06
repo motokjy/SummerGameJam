@@ -67,5 +67,5 @@
         "dotnet.defaultSolution": "gamejym.sln",
         "*.unity": "yaml"
     },
-    "dotnet.defaultSolution": "gameJum.sln"
+    "dotnet.defaultSolution": "SummerGameJam.sln"
 }

@@ -23,7 +23,6 @@ public class CharaMove : MonoBehaviour
     void Update()
     {
         MoveUpdate();
-        JumpUpdate();
     }
 
     private void MoveUpdate()
@@ -33,25 +32,6 @@ public class CharaMove : MonoBehaviour
             xSpeed = 6.0f;
             rightFacing = true;
             spriteRenderer.flipX = false;
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            xSpeed = -6.0f;
-            rightFacing = false;
-            spriteRenderer.flipX = true;
-        }
-        else
-        {
-            xSpeed = 0.0f;
-        }
-    }
-
-    private void JumpUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
-        {
-            rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, jumpPower);
-            isGrounded = false;
         }
     }
 
