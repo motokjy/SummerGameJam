@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requestText: 1
   requestReward: 200
+  prefabName: tikinrace

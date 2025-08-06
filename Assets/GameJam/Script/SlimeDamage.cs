@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class SlimeDamage : MonoBehaviour
 {
+    [SerializeField] GameObject Slime; // スライム（敵キャラ）
+
     public int hp = 3;
+
+    void Start()
+    {
+        if (Slime != null)
+            Slime.SetActive(true);
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -11,7 +19,9 @@ public class SlimeDamage : MonoBehaviour
             hp--;
             if (hp <= 0)
             {
-                Destroy(gameObject);
+                if (Slime != null)
+                    Slime.SetActive(false); // スライムは即消す
+                // ここでコルーチンやUI処理はしない
             }
         }
     }

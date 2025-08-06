@@ -6,6 +6,13 @@ TagManager:
   tags:
   - '"Slime"'
   - Bow
+  - Goal
+  - Ground
+  - coin
+  - goal1
+  - goal2
+  - wall
+  - Slime
   layers:
   - Default
   - TransparentFX

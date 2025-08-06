@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requestText: 8
   requestReward: -1000
+  prefabName: Hakobi
